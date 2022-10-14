@@ -117,6 +117,5 @@ class ProductController extends Controller
         public function CatDeactive($id){
             Product::findOrFail($id)->update(['status' => '0',]); 
             return redirect()->back();
-
-  }
+       }
 }

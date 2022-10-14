@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\EmployeeController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -21,5 +23,12 @@ Route::get('/', function () {
 
 Route::resource('products', ProductController::class);
 // new
-Route::get('/catactive/{id}', [ProductController::class, 'CatActive'])->name('CatActive');
-Route::get('/cat/deactive/{id}', [ProductController::class, 'CatDeactive'])->name('CatDeactive');
+Route::get('/active/{id}', [EmployeeController::class, 'Active'])->name('Active');
+Route::get('/deactive/{id}', [EmployeeController::class, 'Deactive'])->name('Deactive');
+Route::get('/employee', [EmployeeController::class, 'employee'])->name('employee.create');
+Route::post('/employee/store', [EmployeeController::class, 'store'])->name('employee.store');
+Route::get('/employee/index', [EmployeeController::class, 'index'])->name('employee.index');
+Route::get('/employee/edit/{id}', [EmployeeController::class, 'edit'])->name('employee.edit');
+Route::post('/employee/update/{id}', [EmployeeController::class, 'update'])->name('employee.update');
+Route::get('/employee/show/{id}', [EmployeeController::class, 'show'])->name('employee.show');
+Route::get('/employee/delete/{id}', [EmployeeController::class, 'delete'])->name('employee.delete');

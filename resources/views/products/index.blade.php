@@ -31,16 +31,7 @@
             <td>{{ ++$i }}</td>
             <td>{{ $product->name }}</td>
             <td>{{ $product->detail }}</td>
-            <!-- <td>
-            @if($product->status == 1)
-            <a  href="{{ route('products.CatDeactive',$product->id]) }}"
-                class="btn btn-success" title="Product Active Now">Active </a>
-            @else
-
-            <a href="{{ route('products.CatActive',$product->id]) }}"
-                class="btn btn-danger" title="Product Active Now">Deactive </a>
-            @endif
-            </td> -->
+          
             <td>
                 <form action="{{ route('products.destroy',$product->id) }}" method="POST">
    
